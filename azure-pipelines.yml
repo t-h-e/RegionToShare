@@ -3,7 +3,7 @@ pool:
 
 variables:
   solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
+  buildPlatform: 'x64'
   buildConfiguration: 'Release'
   productName: 'RegionToShare'
   appxPackageDir: '$(build.artifactStagingDirectory)\AppxPackages'
