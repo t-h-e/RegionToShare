@@ -35,9 +35,10 @@ steps:
     configuration: '$(buildConfiguration)'
     msbuildArgs: /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=StoreUpload /p:AppxPackageSigningEnabled=false'
 
+# only copies binaries of the defined buildPlatform. While the app bundle may contain multiple
 - task: CopyFiles@2
   inputs:
-    Contents: 'src/RegionToShare/bin/$(buildConfiguration)/net462/*.*'
+    Contents: 'src/RegionToShare/bin/$(buildPlatform)/$(buildConfiguration)/net462/*.*'
     TargetFolder: '$(build.artifactstagingdirectory)/bin'
     flattenFolders: true
 
